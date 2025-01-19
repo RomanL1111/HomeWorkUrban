@@ -73,7 +73,7 @@ async def get_buying_list(message: types.Message):
 
 @dp.callback_query_handler(lambda call: call.data.startswith("product"))
 async def send_confirm_message(call: CallbackQuery):
-    product_number = call.data[-1]  # Получаем номер продукта из callback_data
+    product_number = call.data[-1]
     await call.message.answer(f"Вы успешно приобрели продукт {product_number}!")
     await call.answer()
 
